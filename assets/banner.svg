@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#1e1b4b" />
+      <stop offset="100%" stop-color="#311042" />
+    </linearGradient>
+    <linearGradient id="accent-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#818cf8" />
+      <stop offset="50%" stop-color="#c084fc" />
+      <stop offset="100%" stop-color="#f472b6" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <style>
+      .pulse-circle {
+        animation: pulse 4s ease-in-out infinite alternate;
+      }
+      .wave-path {
+        animation: wave 8s ease-in-out infinite alternate;
+      }
+      .float-node {
+        animation: float 6s ease-in-out infinite alternate;
+      }
+      @keyframes pulse {
+        0% { transform: scale(1); opacity: 0.2; }
+        100% { transform: scale(1.15); opacity: 0.45; }
+      }
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        100% { transform: translateY(-12px); }
+      }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="300" rx="16" fill="url(#bg-gradient)" />
+
+  <!-- Animated Dynamic Background Elements (Behind text) -->
+  <g class="pulse-circle" transform-origin="1000 150">
+    <circle cx="1000" cy="150" r="180" fill="#6366f1" opacity="0.15" />
+    <circle cx="1000" cy="150" r="120" fill="#a855f7" opacity="0.2" />
+  </g>
+  <g class="pulse-circle" transform-origin="150 50">
+    <circle cx="150" cy="50" r="100" fill="#ec4899" opacity="0.15" />
+  </g>
+
+  <!-- Dynamic Network Waves/Lines -->
+  <path class="wave-path" d="M -50,220 Q 200,120 450,230 T 950,180 T 1250,250" fill="none" stroke="url(#accent-gradient)" stroke-width="2" opacity="0.4" />
+  <path class="wave-path" d="M -50,250 Q 250,280 550,190 T 1050,220 T 1250,150" fill="none" stroke="#818cf8" stroke-width="1.5" stroke-dasharray="6,6" opacity="0.3" />
+
+  <!-- Dynamic Connection Nodes (Background visuals) -->
+  <g class="float-node">
+    <circle cx="920" cy="80" r="6" fill="#c084fc" />
+    <line x1="920" y1="80" x2="980" y2="130" stroke="#c084fc" stroke-width="1" opacity="0.4" />
+    <circle cx="980" cy="130" r="4" fill="#818cf8" />
+    <circle cx="1050" cy="90" r="8" fill="#f472b6" />
+    <line x1="980" y1="130" x2="1050" y2="90" stroke="#f472b6" stroke-width="1" opacity="0.4" />
+  </g>
+
+  <!-- Foreground Title and Subtitle -->
+  <text x="600" y="115" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="42" fill="#ffffff" filter="url(#glow)">
+    Awesome Employee Experience Intranet 🚀
+  </text>
+
+  <text x="600" y="165" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="500" font-size="20" fill="#cbd5e1">
+    Curated SaaS Platforms &amp; Open-Source Digital Workplace Solutions
+  </text>
+
+  <!-- Feature Pill Tags in Foreground -->
+  <g transform="translate(600, 220)">
+    <!-- Pill 1 -->
+    <rect x="-290" y="-18" width="170" height="34" rx="17" fill="#1e293b" stroke="#475569" stroke-width="1.5" />
+    <text x="-205" y="4" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#38bdf8">🏢 Enterprise Intranet</text>
+    
+    <!-- Pill 2 -->
+    <rect x="-105" y="-18" width="210" height="34" rx="17" fill="#1e293b" stroke="#475569" stroke-width="1.5" />
+    <text x="0" y="4" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#c084fc">📢 Internal Communications</text>
+
+    <!-- Pill 3 -->
+    <rect x="120" y="-18" width="170" height="34" rx="17" fill="#1e293b" stroke="#475569" stroke-width="1.5" />
+    <text x="205" y="4" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#4ade80">🔓 Open-Source Hubs</text>
+  </g>
+</svg>
